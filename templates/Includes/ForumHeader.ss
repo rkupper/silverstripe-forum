@@ -7,18 +7,17 @@
 			<div class="forum-search-bar">
 				<form class="forum-search" action="$Link(search)" method="get">
 					<fieldset>
-						<label for="search-text"><% _t('SEARCHBUTTON','Search') %></label>
+						<label for="search-text"><%t ForumHeader.ss.SEARCHBUTTON "Search" %></label>
 						<input id="search-text" class="text active" type="text" name="Search" value="$Query.ATT" />
-						<input class="submit action" type="submit" value="<% _t('SEARCHBUTTON','L') %>"/>
+						<input class="submit action" type="submit" value="<%t ForumHeader.ss.SEARCHBUTTON "L" %>"/>
 					</fieldset>	
 				</form>
 			</div>
 
 			<form class="forum-jump" action="#">
-				<label for="forum-jump-select"><% _t('JUMPTO','Jump to:') %></label>
+				<label for="forum-jump-select"><%t ForumHeader.ss.JUMPTO "Jump to:" %></label>
 				<select id="forum-jump-select" onchange="if(this.value) location.href = this.value">
-					<option value=""><% _t('JUMPTO','Jump to:') %></option>
-					<!-- option value=""><% _t('SELECT','Select') %></option -->
+					<option value=""><%t ForumHeader.ss.JUMPTO "Jump to:") %></option>
 					<% if ShowInCategories %>
 						<% control Forums %>
 							<optgroup label="$Title">
@@ -42,9 +41,9 @@
 			<% if NumPosts %>
 				<p class="forumStats">
 					$NumPosts 
-					<strong><% _t('POSTS','Posts') %></strong> 
-					<% _t('IN','in') %> $NumTopics <strong><% _t('TOPICS','Topics') %></strong> 
-					<% _t('BY','by') %> $NumAuthors <strong><% _t('MEMBERS','members') %></strong>
+					<strong><%t ForumHeader.ss.POSTS "Posts" %></strong>
+					<%t ForumHeader.ss.IN "in" %> $NumTopics <strong><%t  ForumHeader.ss.TOPICS "Topics" %></strong>
+					<%t ForumHeader.ss.BY "by" %> $NumAuthors <strong><%t  ForumHeader.ss.MEMBERS "members" %></strong>
 				</p>
 			<% end_if %>
 

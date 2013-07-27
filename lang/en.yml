@@ -278,11 +278,13 @@ en:
     LASTEDITED: 'Last edited:'
     POST: Post
     POSTS: Posts
+    AT: at
   SiteTree:
     DESCRIPTION: 'Generic content page'
   TopicListing.ss:
     BY: by
     CLICKTOUSER: 'Click here to view'
+    CLICKTOUSER2: ''
     GOTOFIRSTUNREAD: 'Go to the first unread post in the %s topic.'
     ON: on
   VirtualPage:

@@ -1,10 +1,11 @@
-<p><% sprintf(_t('HI',"Hi %s,"),$Nickname) %></p>
+<p><%t ForumMember_TopicNotification.ss.HI "Hi {nickname}," nickname = $Nickname) %>,
 
-<p><% _t('NEWPOSTMESSAGE',"A new post has been added to a topic you've subscribed to") %> - '$Title' <% if Author %><% _t('BY', "by") %> $Author.Nickname.<% end_if %></p>
+<p>
+	<%t ForumMember_TopicNotification.ss.NEWPOSTMESSAGE "A new post has been added to a topic you've subscribed to" %> - '$Title' <% if Author %><%t ForumMember_TopicNotification.ss.BY "by") %> $Author.Nickname.<% end_if %></p>
 
 <ul>
-	<li><a href="$Link"><% _t('REPLYLINK', "View the topic") %></a></li>
-	<li><a href="$UnsubscribeLink"><% _t('UNSUBSCRIBETEXT',"Unsubscribe from the topic") %></a></li>
+	<li><a href="$Link"><%t ForumMember_TopicNotification.ss.REPLYLINK "View the topic" %></a></li>
+	<li><a href="$UnsubscribeLink"><%t ForumMember_TopicNotification.ss.UNSUBSCRIBETEXT "Unsubscribe from the topic"v%></a></li>
 </ul>
 
 <p>
