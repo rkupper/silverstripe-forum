@@ -169,7 +169,7 @@ class Post extends DataObject {
 		if($this->canEdit()) {
 			$url = Controller::join_links($this->Link('editpost'), $this->ID);
 
-			return '<a href="' . $url . '" class="editPostLink">' . _t('Post.EDIT','Edit') . '</a>';
+			return $url;
 		}
 		
 		return false;
@@ -186,9 +186,8 @@ class Post extends DataObject {
 	function DeleteLink() {
 		if($this->canDelete()) {
 			$url = $this->Link('deletepost') . '/' . $this->ID;
-			$firstPost = ($this->isFirstPost()) ? ' firstPost' : '';
-
-			return '<a class="deleteLink' . $firstPost . '" href="' . $url . '">' . _t('Post.DELETE','Delete') . '</a>';
+                        
+			return $url;
 		}
 		
 		return false;
@@ -202,8 +201,8 @@ class Post extends DataObject {
 	 */
 	function ReplyLink() {
 		$url = $this->Link('reply');
-
-		return '<a href="' . $url . '" class="replyLink">' . _t('Post.REPLYLINK','Post Reply') . '</a>';
+                
+		return $url;
 	}
 		
 	/**
@@ -214,7 +213,7 @@ class Post extends DataObject {
 	function ShowLink() {
 		$url = $this->Link('show');
 		
-		return '<a href="' . $url . '" class="showLink">' . _t('Post.SHOWLINK','Show Thread') . "</a>";
+		return $url;
 	}
 	
 	/**
@@ -228,11 +227,12 @@ class Post extends DataObject {
 			$member = Member::currentUser();
 		 	if($member->ID != $this->AuthorID) {
 				$link = $this->Forum()->Link('markasspam') . '/' . $this->ID;
-				$firstPost = ($this->isFirstPost()) ? ' firstPost' : '';
 				
-				return '<a href="' . $link .'" class="markAsSpamLink' . $firstPost . '" rel="' . $this->ID . '">'. _t('Post.MARKASSPAM', 'Mark as Spam') . '</a>';
+				return $link;
 			}
 		}
+		
+		return false;
 	}
 
 	/**

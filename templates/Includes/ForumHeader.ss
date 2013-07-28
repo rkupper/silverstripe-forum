@@ -7,18 +7,17 @@
 			<div class="forum-search-bar">
 				<form class="forum-search" action="$Link(search)" method="get">
 					<fieldset>
-						<label for="search-text"><% _t('ForumHeader_ss.SEARCHBUTTON','Search') %></label>
+						<label for="search-text"><%t ForumHeader_ss.SEARCHBUTTON "Search" %></label>
 						<input id="search-text" class="text active" type="text" name="Search" value="$Query.ATT" />
-						<input class="submit action" type="submit" value="<% _t('ForumHeader_ss.SEARCHBUTTON','L') %>"/>
+						<input class="submit action" type="submit" value="<%t ForumHeader_ss.SEARCHBUTTON "L" %>"/>
 					</fieldset>	
 				</form>
 			</div>
 
 			<form class="forum-jump" action="#">
-				<label for="forum-jump-select"><% _t('ForumHeader_ss.JUMPTO','Jump to:') %></label>
+				<label for="forum-jump-select"><%t ForumHeader_ss.JUMPTO "Jump to:" %></label>
 				<select id="forum-jump-select" onchange="if(this.value) location.href = this.value">
-					<option value=""><% _t('ForumHeader_ss.JUMPTO','Jump to:') %></option>
-					<!-- option value=""><% _t('ForumHeader_ss.SELECT','Select') %></option -->
+					<option value=""><%t ForumHeader_ss.JUMPTO "Jump to:") %></option>
 					<% if ShowInCategories %>
 						<% loop Forums %>
 							<optgroup label="$Title">
@@ -42,9 +41,9 @@
 			<% if NumPosts %>
 				<p class="forumStats">
 					$NumPosts 
-					<strong><% _t('ForumHeader_ss.POSTS','Posts') %></strong> 
-					<% _t('ForumHeader_ss.IN','in') %> $NumTopics <strong><% _t('ForumHeader_ss.TOPICS','Topics') %></strong> 
-					<% _t('ForumHeader_ss.BY','by') %> $NumAuthors <strong><% _t('ForumHeader_ss.MEMBERS','members') %></strong>
+					<strong><%t ForumHeader_ss.POSTS "Posts" %></strong>
+					<%t ForumHeader_ss.IN "in" %> $NumTopics <strong><%t  ForumHeader_ss.TOPICS "Topics" %></strong>
+					<%t ForumHeader_ss.BY "by" %> $NumAuthors <strong><%t  ForumHeader_ss.MEMBERS "members" %></strong>
 				</p>
 			<% end_if %>
 

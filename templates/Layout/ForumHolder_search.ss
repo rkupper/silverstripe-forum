@@ -40,7 +40,7 @@
 				<tr class="$EvenOdd">
 					<td class="forumCategory" colspan="3">
 						<% loop Thread %>
-							<a class="topicTitle" href="$Link" title="<% sprintf(_t('Forum.ss.GOTOTHISTOPIC',"Go to the %s topic"),$Title) %>">$Title</a>
+							<a class="topicTitle" href="$Link" title="<% sprintf(_t('Forum_ss.GOTOTHISTOPIC',"Go to the %s topic"),$Title) %>">$Title</a>
 						<% end_loop %>
 					
 						<p>$Content.ContextSummary <span class="dateInfo">$Created.Ago</span></p>
